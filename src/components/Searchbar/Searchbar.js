@@ -2,15 +2,15 @@ import React from 'react';
 import styles from './Searchbar.module.css';
 
 function Searchbar({ onSubmit }) {
-  const [ask, setAsk] = React.useState('');
+  const [query, setQuery] = React.useState('');
 
   const handleSubmit = e => {
     e.preventDefault();
-    onSubmit(ask);
+    onSubmit(query);
   };
 
   const handleInputChange = e => {
-    setAsk(e.target.value);
+    setQuery(e.target.value);
   };
 
   return (
@@ -22,7 +22,7 @@ function Searchbar({ onSubmit }) {
           autoComplete="off"
           autoFocus
           placeholder="Search images and photos"
-          value={ask}
+          value={query}
           onChange={handleInputChange}
         />
         <button type="submit" className={styles.button}>
